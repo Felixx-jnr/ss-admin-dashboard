@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@keyframes slide {
+  from {
+    transform: translateX(-10);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.menu-slide {
+  animation: 5s slide infinite linear;
+}
+
+.menu-slide:before,
+.menu-slide:after {
+  position: absolute;
+  top: 0;
+  width: 27px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}

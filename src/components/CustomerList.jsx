@@ -17,7 +17,6 @@ const CustomerList = () => {
         </div>
         <div>
           <h4 className=" font-inter font-bold text-sm text-[#1E293B]">
-            {" "}
             Ana Black
           </h4>
           <p className=" font-inter font-normal text-sm text-[#64748b]">
