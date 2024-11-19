@@ -75,7 +75,7 @@ const Menu = () => {
               onClick={() => setSelectedCategory(category)}
               className={`font-inter mt-11 pt-[7px] pb-4 font-medium text-[15px] text-[#5F6D7E] mr-6 transition duration-200 ${
                 selectedCategory === category
-                  ? " border-b-[2px] border-[#6C5DD3] text-[#6C5DD3]"
+                  ? " border-b-[3px] border-[#6C5DD3] text-[#6C5DD3]"
                   : ""
               }`}
             >

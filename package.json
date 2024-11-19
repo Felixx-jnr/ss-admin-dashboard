@@ -3,18 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@canvasjs/charts": "^3.10.16",
+    "@canvasjs/react-charts": "^1.0.2",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "glider-js": "^1.7.9",
+    "chart.js": "^4.4.6",
+    "echarts": "^5.5.1",
     "react": "^18.3.1",
-    "react-alice-carousel": "^2.9.1",
-    "react-carousel": "^4.3.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-scripts": "5.0.1",
-    "react-slick": "^0.30.2",
-    "slick-carousel": "^1.8.1",
-    "swiper": "^11.1.14",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

@@ -16,7 +16,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className=" bg-white flex flex-col pb-[41px] w-[271px]">
+    <div className=" bg-white flex flex-col pb-[41px] ">
       {/* Logo */}
       <div className=" flex items-center mt-[39px] mb-[77px] self-center">
         <div className=" mr-[18px] bg-purple px-[6px] py-[9px] rounded-ss-3xl rounded-ee-3xl">

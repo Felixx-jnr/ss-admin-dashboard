@@ -4,16 +4,28 @@ import CustomerList from "./components/CustomerList";
 import SideBar from "./components/SideBar";
 import TopBar from "./components/TopBar";
 import Menu from "./components/Menu";
+import Revenue from "./components/Revenue";
+import Customer from "./components/Customer";
+import CustomerMap from "./components/CustomerMap";
 
 function App() {
   return (
-    <main className="flex bg-[#F8F9FF] ">
+    <main className="flex bg-[#F8F9FF] h-[1000vh]">
       <div>
         <SideBar />
       </div>
-      <div className="w-screen overflow-hidden ">
+      <div className="max-w-[1169px] overflow-hidden ">
         <TopBar />
         <div className="pl-4 pr-9 w-full">
+          <Card />
+          <div className=" grid grid-cols-2 gap-[13px] mt-[31px]">
+            <Revenue />
+            <Customer />
+          </div>
+          <div className="mt-[31px] flex items-center">
+            <CustomerMap />
+            <CustomerList />
+          </div>
           <Menu />
         </div>
       </div>

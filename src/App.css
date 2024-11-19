@@ -24,3 +24,10 @@
   content: "";
   z-index: 2;
 }
+
+body {
+  overflow-x: hidden;
+  max-width: 1440px;
+  margin: 0 auto;
+  background: red;
+}
