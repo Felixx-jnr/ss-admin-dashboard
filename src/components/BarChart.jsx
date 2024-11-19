@@ -28,9 +28,9 @@ const customCirclesPlugin = {
 
     // Circle styling and positions
     const circleDetails = {
-      Mar: { borderColor: "#0000FF", innerColor: "#FFFFFF" }, // Blue outside, white inside
-      Jun: { borderColor: "#FF69B4", innerColor: "#FFFFFF" }, // Pink outside, white inside
-      Oct: { borderColor: "#FF0000", innerColor: "#FFFFFF" }, // Red outside, white inside
+      Mar: { borderColor: "blue", innerColor: "#FFFFFF" }, // Blue outside, white inside
+      Jun: { borderColor: "#6C5DD3", innerColor: "#FFFFFF" }, // Pink outside, white inside
+      Oct: { borderColor: "#FF754C", innerColor: "#FFFFFF" }, // Red outside, white inside
     };
 
     chart.data.labels.forEach((label, index) => {
@@ -39,7 +39,7 @@ const customCirclesPlugin = {
 
         if (bar) {
           const x = bar.x;
-          const y = bar.y - 10; // 10px above the bar top
+          const y = bar.y - 16; // 10px above the bar top
 
           // Outer circle
           ctx.beginPath();
@@ -49,7 +49,7 @@ const customCirclesPlugin = {
 
           // Inner circle
           ctx.beginPath();
-          ctx.arc(x, y, 4, 0, 2 * Math.PI);
+          ctx.arc(x, y, 3, 0, 2 * Math.PI);
           ctx.fillStyle = circleDetails[label].innerColor;
           ctx.fill();
         }
@@ -64,9 +64,9 @@ const BarChart = () => {
   const getGradient = (ctx, chartArea, month) => {
     const gradient = ctx.createLinearGradient(
       0,
-      chartArea.top,
+      chartArea.left,
       0,
-      chartArea.bottom
+      chartArea.right
     );
 
     if (month === "Mar") {
@@ -79,7 +79,7 @@ const BarChart = () => {
       gradient.addColorStop(0, "#FF4CE2");
       gradient.addColorStop(1, "#FFB7F5");
     } else {
-      gradient.addColorStop(0, "gray");
+      gradient.addColorStop(0, "#E6E8F0");
     }
 
     return gradient;
@@ -102,7 +102,10 @@ const BarChart = () => {
     ],
     datasets: [
       {
-        data: [12, 19, 3, 5, 2, 3, 7, 9, 4, 10, 6, 8],
+        data: [
+          37.91, 92.82, 64.06, 44, 58.83, 105.24, 50.99, 92.82, 25.49, 73.21,
+          41.18, 64.06,
+        ],
         backgroundColor: (ctx) => {
           const chart = ctx.chart;
           const { ctx: canvasContext, chartArea } = chart;
@@ -142,7 +145,7 @@ const BarChart = () => {
           display: false,
         },
         ticks: {
-          color: "#4B5563",
+          color: "#8F95B2",
           font: {
             size: 12,
             family: "Inter, sans-serif",
@@ -168,25 +171,33 @@ const BarChart = () => {
   };
 
   return (
-    <div className=" bg-white rounded-lg shadow-md">
-      <Bar
-        ref={chartRef}
-        data={data}
-        options={options}
-        plugins={[customCirclesPlugin]}
-      />
-      <div className="flex justify-center mt-4 space-x-8">
-        <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-[#33C600] border-2 border-white rounded-full"></div>
-          <span className="text-gray-700">Income</span>
+    <div className=" ">
+      <div className="pl-4 pr-10">
+        <Bar
+          ref={chartRef}
+          data={data}
+          options={options}
+          plugins={[customCirclesPlugin]}
+        />
+      </div>
+      <div className="ml-6 flex gap-4 mt-6 mb-6">
+        <div className="flex items-center gap-[7px]">
+          <div className="w-3 h-3 bg-[linear-gradient(283.95deg,_#0049C6_-12.57%,_#CDF4FF_126.88%)] rounded-[4px] "></div>
+          <span className=" font-normal font-inter text-xs text-center text-[#8F95B2]">
+            Pending(10%)
+          </span>
         </div>
-        <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-[#6C5DD3] border-2 border-white rounded-full"></div>
-          <span className="text-gray-700">Spending</span>
+        <div className="flex items-center gap-[7px]">
+          <div className="w-3 h-3  bg-[linear-gradient(135deg,_#FFB7F5_0%,_#6C5DD3_100%)] rounded-[4px] "></div>
+          <span className=" font-normal font-inter text-xs text-center text-[#8F95B2]">
+            Income
+          </span>
         </div>
-        <div className="flex items-center space-x-2">
-          <div className="w-4 h-4 bg-[#FF4CE2] border-2 border-white rounded-full"></div>
-          <span className="text-gray-700">Expenses</span>
+        <div className="flex items-center gap-[7px]">
+          <div className="w-3 h-3 bg-[linear-gradient(333.01deg,_#FF754C_-23.54%,_#FFB7F5_173.81%)] rounded-[4px] "></div>
+          <span className=" font-normal font-inter text-xs text-center text-[#8F95B2]">
+            Expenses
+          </span>
         </div>
       </div>
     </div>
