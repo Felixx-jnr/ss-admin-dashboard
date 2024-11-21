@@ -12,7 +12,7 @@ const cardDets = [
     amount: "$37,193.00",
   },
   {
-    icon: "/3-User.svg",
+    icon: "/3 User.png",
     title: "Total Customer",
     amount: "1349",
   },

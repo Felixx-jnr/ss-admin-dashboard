@@ -131,6 +131,7 @@ const BarChart = () => {
 
   const options = {
     responsive: true,
+    maintainAspectRatio: false,
     plugins: {
       legend: {
         display: false,
@@ -168,6 +169,13 @@ const BarChart = () => {
         },
       },
     },
+    layout: {
+      padding: {
+        top: 10, // Adjust top padding
+        left: 0,
+        right: 0,
+      },
+    },
   };
 
   return (
@@ -180,7 +188,7 @@ const BarChart = () => {
           plugins={[customCirclesPlugin]}
         />
       </div>
-      <div className="ml-6 flex gap-4 mt-6 mb-6">
+      <div className="ml-6 flex gap-4 my-6">
         <div className="flex items-center gap-[7px]">
           <div className="w-3 h-3 bg-[linear-gradient(283.95deg,_#0049C6_-12.57%,_#CDF4FF_126.88%)] rounded-[4px] "></div>
           <span className=" font-normal font-inter text-xs text-center text-[#8F95B2]">

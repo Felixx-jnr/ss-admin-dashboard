@@ -5,7 +5,7 @@ const Revenue = () => {
   return (
     <div className="bg-white flex flex-col rounded-md ">
       <div className="flex items-center justify-between border-b ">
-        <h3 className=" ml-[30px] font-inter font-bold text-lg text-[#081735] mt-6 mb-4">
+        <h3 className=" ml-[30px] font-inter font-bold text-lg text-[#081735] mt-6 pb-4">
           Revenue
         </h3>
         <img
@@ -15,7 +15,7 @@ const Revenue = () => {
         />
       </div>
 
-      <h3 className="font-inter font-bold text-[32px] text-[#081735] ml-7 pt-6 pb-8">
+      <h3 className="font-inter font-bold text-[32px] text-[#081735] ml-7 mb-[35px] mt-6">
         $112,340
       </h3>
 

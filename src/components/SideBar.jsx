@@ -4,11 +4,23 @@ const Sidebar = () => {
   const [activeLink, setActiveLink] = useState(null);
 
   const links = [
-    { name: "Dashboard", icon: "/3-User.svg" },
-    { name: "Orders", icon: "/3-User.svg" },
-    { name: "Analytics", icon: "/3-User.svg" },
-    { name: "Customers", icon: "/3-User.svg" },
-    { name: "Menu", icon: "/3-User.svg" },
+    {
+      name: "Dashboard",
+      icon: "/dashboard.svg",
+      iconActive: "/dashboard-active.svg",
+    },
+    { name: "Orders", icon: "/Bag-1.svg", iconActive: "/Bag-1 -active.svg" },
+    {
+      name: "Analytics",
+      icon: "/Chart.svg",
+      iconActive: "/Chart - active.svg",
+    },
+    {
+      name: "Customers",
+      icon: "/3-User.svg",
+      iconActive: "/3-User-active.svg",
+    },
+    { name: "Menu", icon: "/Document.svg", iconActive: "/Document-active.svg" },
   ];
 
   const handleLinkClick = (index) => {
@@ -46,9 +58,9 @@ const Sidebar = () => {
           >
             <span>
               <img
-                src="/3-User.svg"
-                alt=""
-                className=""
+                src={activeLink === index ? link.iconActive : link.icon}
+                alt={`${link.name} icon`}
+                className="w-6 h-6"
               />
             </span>
             {link.name}
