@@ -25,9 +25,9 @@ const cardDets = [
 
 const Card = () => {
   return (
-    <div className="flex flex-wrap gap-[33px]">
+    <div className="  mt-5 md:mt-[50px] grid md:grid-cols-4 xs:grid-cols-2 xl:gap-[33px] gap-4  justify-items-center ">
       {cardDets.map((card) => (
-        <div className=" mt-[50px] bg-white/25 w-[254px] h-[182px] rounded-[6px] border border-white backdrop-blur-[27.2px] shadow-[0px_12px_16px_-4px_rgba(12,26,36,.04)] pl-6 pt-6  ">
+        <div className=" bg-white/25 w-full max-w-[254px] h-[182px] rounded-[6px] border border-white backdrop-blur-[27.2px] shadow-[0px_12px_16px_-4px_rgba(12,26,36,.04)] xl:pl-6 pl-3 pt-6  ">
           <div className="bg-white p-3 rounded-[17px] inline-block ">
             <img
               src={card.icon}
@@ -39,7 +39,7 @@ const Card = () => {
             {card.title}
           </p>
 
-          <h3 className="font-inter font-semibold text-3xl text-[#1E293B]">
+          <h3 className="font-inter font-semibold text-2xl xl:text-3xl text-[#1E293B]">
             {card.amount}
           </h3>
         </div>
