@@ -10,7 +10,7 @@ import CustomerMap from "./components/CustomerMap";
 
 function App() {
   return (
-    <main className="flex bg-[#F8F9FF] h-[1000vh]">
+    <main className="flex bg-[#F8F9FF] pb-[61px]">
       <div>
         <SideBar />
       </div>
@@ -18,11 +18,11 @@ function App() {
         <TopBar />
         <div className="pl-4 pr-9 w-full">
           <Card />
-          <div className=" grid grid-cols-2 gap-[13px] mt-[31px]">
+          <div className=" grid grid-cols-1 mid:grid-cols-2 gap-[13px] mt-[31px]">
             <Revenue />
             <Customer />
           </div>
-          <div className="mt-[31px] flex items-center">
+          <div className="mt-[31px] flex items-center max-mid:flex-col max-mid:gap-6 w-full  ">
             <CustomerMap />
             <CustomerList />
           </div>

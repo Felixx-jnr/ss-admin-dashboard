@@ -12,6 +12,7 @@ module.exports = {
         lightGrey: "#8F95B2",
       },
       screens: {
+        mid: "800px",
         xs: "400px",
       },
     },

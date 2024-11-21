@@ -62,18 +62,18 @@ const Menu = () => {
 
   return (
     <div className=" bg-white mt-10 rounded-md overflow-hidden ">
-      <div className="flex justify-between border-b border-[#E6E8F0] border-solid   ">
+      <div className="sm:flex justify-between border-b border-[#E6E8F0] border-solid   ">
         <div>
-          <h3 className=" py-8 font-inter font-bold text-lg text-[#081735] ml-[27px] ">
+          <h3 className=" sm:py-8 py-2 font-inter font-bold text-lg text-[#081735] ml-2 lg:ml-[27px] ">
             Menu
           </h3>
         </div>
-        <div className="mr-10">
+        <div className="lg:mr-10">
           {categories.map((category) => (
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`font-inter mt-11 pt-[7px] pb-4 font-medium text-[15px] text-[#5F6D7E] mr-6 transition duration-200 ${
+              className={`font-inter mt-3  sm:mt-11 pt-[7px] sm:pb-5 font-medium text-sm sm:text-[15px] text-[#5F6D7E] mr-2 md:mr-6 transition duration-200 ${
                 selectedCategory === category
                   ? " border-b-[3px] border-[#6C5DD3] text-[#6C5DD3]"
                   : ""
@@ -87,7 +87,7 @@ const Menu = () => {
 
       {/* Image Grid */}
       <div className=" pl-7 pr-[37px] mt-[22px] mb-4">
-        <div className=" grid grid-cols-[1.73fr_1fr] gap-5  ">
+        <div className=" grid md:grid-cols-[1.73fr_1fr] grid-cols-1 gap-5  ">
           {images.slice(0, 2).map((image) => (
             <div className="relative ">
               <img
@@ -96,15 +96,15 @@ const Menu = () => {
                 className="w-full object-cover rounded-lg "
               />
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] bg-[#FFFFFFA6] rounded-md border border-white px-4 ">
-                <div className="flex items-center mt-4 justify-between">
-                  <h3 className=" font-sans font-medium text-sm text-[#1E293B]">
+                <div className="flex items-center mt-1 xl:mt-4 justify-between">
+                  <h3 className=" font-sans font-medium text-xs xl:text-sm text-[#1E293B]">
                     {image.food}
                   </h3>
-                  <p className=" font-sans font-medium text-sm text-[#1E293B]">
+                  <p className=" font-sans font-medium text-xs xl:text-sm text-[#1E293B]">
                     {image.price}
                   </p>
                 </div>
-                <p className="font-sans font-normal text-xs text-[#64748B] mb-4">
+                <p className="font-sans font-normal text-xs text-[#64748B] mb-1 xl:mb-4">
                   {" "}
                   456 Served
                 </p>
@@ -118,14 +118,14 @@ const Menu = () => {
       <div className=" pl-7 flex gap-7 pb-[34px]">
         <div className=" flex relative gap-7 menu-slide ">
           {images.slice(2).map((image) => (
-            <div className=" rounded-lg gap-7 w-[258px] h-[234px] relative ">
+            <div className=" rounded-lg gap-7 w-[198.5px] h-[180px] sm:w-[258px] sm:h-[234px] relative ">
               <img
                 src={image.src}
                 alt={image.category}
                 className="w-full h-full object-cover rounded-lg"
               />
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] bg-[#FFFFFFA6] rounded-md border border-white px-4 ">
-                <div className="flex items-center mt-4 justify-between">
+                <div className="flex items-center mt-1 sm:mt-4 justify-between">
                   <h3 className=" font-sans font-medium text-sm text-[#1E293B]">
                     {image.food}
                   </h3>
@@ -133,7 +133,7 @@ const Menu = () => {
                     {image.price}
                   </p>
                 </div>
-                <p className="font-sans font-normal text-xs text-[#64748B] mb-4">
+                <p className="font-sans font-normal text-xs text-[#64748B] mb-1 sm:mb-4">
                   {" "}
                   456 Served
                 </p>
@@ -144,14 +144,14 @@ const Menu = () => {
 
         <div className=" flex relative gap-7 menu-slide">
           {images.slice(2).map((image) => (
-            <div className=" rounded-lg gap-7 w-[258px] h-[234px] relative ">
+            <div className=" rounded-lg gap-7 w-[198.5px] h-[180px] sm:w-[258px] sm:h-[234px] relative ">
               <img
                 src={image.src}
                 alt={image.category}
                 className="w-full h-full object-cover rounded-lg"
               />
               <div className="absolute bottom-4 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] bg-[#FFFFFFA6] rounded-md border border-white px-4 ">
-                <div className="flex items-center mt-4 justify-between">
+                <div className="flex items-center sm:mt-4 mt-1 justify-between">
                   <h3 className=" font-sans font-medium text-sm text-[#1E293B]">
                     {image.food}
                   </h3>
@@ -159,7 +159,7 @@ const Menu = () => {
                     {image.price}
                   </p>
                 </div>
-                <p className="font-sans font-normal text-xs text-[#64748B] mb-4">
+                <p className="font-sans font-normal text-xs text-[#64748B] mb-1 sm:mb-4">
                   {" "}
                   456 Served
                 </p>

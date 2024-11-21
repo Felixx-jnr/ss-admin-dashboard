@@ -12,7 +12,7 @@
 }
 
 .menu-slide {
-  animation: 5s slide infinite linear;
+  animation: 50s slide infinite linear;
 }
 
 .menu-slide:before,
