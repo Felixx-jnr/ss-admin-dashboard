@@ -1,9 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import PieChart from "./PieChart";
 import SmallDoughnut from "./SmallDoughNut";
 import SmallDoughnutTwo from "./SmallDoughNutTwo";
 
+const buttons = [
+  {
+    title: "View",
+    icon: "/carbon_view-filled.svg",
+  },
+  {
+    title: "Export",
+    icon: "/bx_bx-export.svg",
+  },
+  {
+    title: "Remove",
+    icon: "/feather_trash-2.svg",
+  },
+];
+
 const Customer = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleOpen = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div className="bg-white rounded-md mr-1">
       <div className="flex items-center justify-between border-b">
@@ -16,11 +36,44 @@ const Customer = () => {
           </p>
         </div>
 
-        <img
-          src="/Frame 70.svg"
-          alt=""
-          className="mr-[30px]"
-        />
+        <div
+          onClick={() => toggleOpen()}
+          className="relative cursor-pointer "
+        >
+          <img
+            src="/Frame 70.svg"
+            alt=""
+            className="mx-[30px] py-1"
+          />
+          {isOpen && (
+            <div
+              onClick={() => toggleOpen()}
+              className=" z-10 absolute top-4 right-6 bg-white border border-[#E6E8F0] rounded-lg shadow-md "
+            >
+              <ul className="w-[150px]">
+                {buttons.map((button, index) => (
+                  <li key={index}>
+                    <div className="flex items-center">
+                      <div className="py-[9px] pl-4 pr-3">
+                        <img
+                          src={button.icon}
+                          alt=""
+                        />
+                      </div>
+                      <span
+                        className={` font-inter font-normal text-sm text-[#8F95B2] ${
+                          index == 2 ? "text-[#FF754C]" : ""
+                        }`}
+                      >
+                        {button.title}
+                      </span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
+        </div>
       </div>
 
       <div className="flex max-small:gap-6 max-small:flex-col items-center max-mid:justify-center gap-3 xl:gap-14">

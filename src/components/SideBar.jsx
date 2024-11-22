@@ -53,7 +53,7 @@ const Sidebar = () => {
         {/* Logo */}
         <div
           className={`flex items-center mt-[39px] mb-[77px] self-center ${
-            isSidebarOpen ? "mt-20" : ""
+            isSidebarOpen ? "mt-24" : ""
           }`}
         >
           <div className="mr-[18px] bg-[#6C5DD3] px-[6px] py-[9px] rounded-ss-3xl rounded-ee-3xl">
@@ -73,7 +73,7 @@ const Sidebar = () => {
           {links.map((link, index) => (
             <li
               key={index}
-              className={`font-inter font-bold w-full flex items-center gap-4 py-3 px-5 text-left cursor-pointer rounded-lg 
+              className={`font-inter font-bold w-full flex items-center gap-4 py-3 px-5 text-left cursor-pointer rounded-lg  
                 ${
                   activeLink === index
                     ? "bg-purple text-white"
@@ -89,6 +89,16 @@ const Sidebar = () => {
                 />
               </span>
               {link.name}
+              {index == 1 && (
+                <div className="ml-auto">
+                  <img
+                    src={
+                      activeLink === index ? "/Action.svg" : "/Action Icon.svg"
+                    }
+                    alt=""
+                  />
+                </div>
+              )}
             </li>
           ))}
         </ul>

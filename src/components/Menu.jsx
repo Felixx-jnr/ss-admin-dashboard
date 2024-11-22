@@ -69,9 +69,9 @@ const Menu = () => {
           </h3>
         </div>
         <div className="lg:mr-10">
-          {categories.map((category) => (
+          {categories.map((category, index) => (
             <button
-              key={category}
+              key={index}
               onClick={() => setSelectedCategory(category)}
               className={`font-inter mt-3  sm:mt-11 pt-[7px] sm:pb-5 font-medium text-sm sm:text-[15px] text-[#5F6D7E] mr-2 md:mr-6 transition duration-200 ${
                 selectedCategory === category
@@ -88,8 +88,11 @@ const Menu = () => {
       {/* Image Grid */}
       <div className=" pl-7 pr-[37px] mt-[22px] mb-4">
         <div className=" grid md:grid-cols-[1.73fr_1fr] grid-cols-1 gap-5  ">
-          {images.slice(0, 2).map((image) => (
-            <div className="relative ">
+          {images.slice(0, 2).map((image, index) => (
+            <div
+              key={index}
+              className="relative "
+            >
               <img
                 src={image.src}
                 alt={image.category}
@@ -117,8 +120,11 @@ const Menu = () => {
       {/* Slider Grid */}
       <div className=" pl-7 flex gap-7 pb-[34px]">
         <div className=" flex relative gap-7 menu-slide ">
-          {images.slice(2).map((image) => (
-            <div className=" rounded-lg gap-7 w-[198.5px] h-[180px] sm:w-[258px] sm:h-[234px] relative ">
+          {images.slice(2).map((image, index) => (
+            <div
+              key={index}
+              className=" rounded-lg gap-7 w-[198.5px] h-[180px] sm:w-[258px] sm:h-[234px] relative "
+            >
               <img
                 src={image.src}
                 alt={image.category}
@@ -143,8 +149,11 @@ const Menu = () => {
         </div>
 
         <div className=" flex relative gap-7 menu-slide">
-          {images.slice(2).map((image) => (
-            <div className=" rounded-lg gap-7 w-[198.5px] h-[180px] sm:w-[258px] sm:h-[234px] relative ">
+          {images.slice(2).map((image, index) => (
+            <div
+              key={index}
+              className=" rounded-lg gap-7 w-[198.5px] h-[180px] sm:w-[258px] sm:h-[234px] relative "
+            >
               <img
                 src={image.src}
                 alt={image.category}

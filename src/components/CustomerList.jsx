@@ -1,3 +1,4 @@
+import { keyboard } from "@testing-library/user-event/dist/keyboard";
 import React from "react";
 
 const customerList = [
@@ -45,8 +46,11 @@ const CustomerList = () => {
         Customers List
       </h3>
 
-      {customerList.map((customer) => (
-        <div className=" flex items-center gap-2 xs:gap-4 mb-[13px] ">
+      {customerList.map((customer, index) => (
+        <div
+          key={index}
+          className=" flex items-center gap-2 xs:gap-4 mb-[13px] "
+        >
           <div className=" w-8 h-8 xs:w-10 xs:h-10 rounded-[50%]">
             <img
               src={customer.src}

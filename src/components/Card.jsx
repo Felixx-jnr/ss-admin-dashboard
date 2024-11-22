@@ -26,8 +26,11 @@ const cardDets = [
 const Card = () => {
   return (
     <div className="  mt-5 md:mt-[50px] grid md:grid-cols-4 xs:grid-cols-2 xl:gap-[33px] gap-4 justify-items-center ">
-      {cardDets.map((card) => (
-        <div className=" bg-white/25 w-full max-w-[254px] h-[182px] rounded-[6px] border border-white backdrop-blur-[27.2px] shadow-[0px_12px_16px_-4px_rgba(12,26,36,.04)] xl:pl-6 pl-3 pt-6  ">
+      {cardDets.map((card, index) => (
+        <div
+          key={index}
+          className=" bg-white/25 w-full max-w-[254px] h-[182px] rounded-[6px] border border-white backdrop-blur-[27.2px] shadow-[0px_12px_16px_-4px_rgba(12,26,36,.04)] xl:pl-6 pl-3 pt-6  "
+        >
           <div className="bg-white p-3 rounded-[17px] inline-block ">
             <img
               src={card.icon}
