@@ -52,8 +52,8 @@ const Sidebar = () => {
       >
         {/* Logo */}
         <div
-          className={`flex items-center mt-[39px] mb-[77px] self-center ${
-            isSidebarOpen ? "mt-24" : ""
+          className={`flex items-center mb-[77px] self-center ${
+            isSidebarOpen ? " mt-20 " : " mt-[39px]"
           }`}
         >
           <div
