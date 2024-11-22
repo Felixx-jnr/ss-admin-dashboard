@@ -8,11 +8,11 @@ const Customer = () => {
     <div className="bg-white rounded-md mr-1">
       <div className="flex items-center justify-between border-b">
         <div className="ml-[30px] py-[11px]">
-          <h3 className=" font-inter font-bold text-lg text-[#081735] ">
+          <h3 className=" font-inter font-bold text-lg text-[#081735] mb-[1px] ">
             Customer
           </h3>
           <p className="font-inter font-normal text-xs text-[#8F95B2]">
-            Daily customers
+            Customers that buy our products
           </p>
         </div>
 
@@ -64,7 +64,7 @@ const Customer = () => {
         </div>
       </div>
 
-      <div className=" flex gap-2 md:gap-4 mt-[37px] justify-center ">
+      <div className=" flex gap-2 md:gap-4 mt-[37px] justify-center pb-6 ">
         <div className="flex items-center gap-[6px] ">
           <div
             style={{

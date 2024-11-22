@@ -16,7 +16,7 @@ function App() {
       </div>
       <div className="max-w-[1169px] overflow-hidden ">
         <TopBar />
-        <div className="pl-4 pr-9 w-full">
+        <div className="pl-4 pr-4 lg:pr-9 w-full">
           <Card />
           <div className=" grid grid-cols-1 mid:grid-cols-2 gap-[13px] mt-[31px]">
             <Revenue />
