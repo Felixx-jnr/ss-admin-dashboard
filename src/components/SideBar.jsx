@@ -35,7 +35,7 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative ">
       {/* Toggle Button */}
       <button
         className="lg:hidden absolute top-6 left-2 z-50 p-2 bg-purple text-white rounded-lg focus:outline-none"
@@ -56,7 +56,9 @@ const Sidebar = () => {
             isSidebarOpen ? "mt-24" : ""
           }`}
         >
-          <div className="mr-[18px] bg-[#6C5DD3] px-[6px] py-[9px] rounded-ss-3xl rounded-ee-3xl">
+          <div
+            className={`mr-[18px] bg-[#6C5DD3] px-[6px] py-[9px] rounded-ss-3xl rounded-ee-3xl`}
+          >
             <img
               src="/Vector.svg"
               alt="logo"
