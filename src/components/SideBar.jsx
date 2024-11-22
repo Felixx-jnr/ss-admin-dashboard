@@ -58,7 +58,7 @@ const Sidebar = () => {
         >
           <div className="mr-[18px] bg-[#6C5DD3] px-[6px] py-[9px] rounded-ss-3xl rounded-ee-3xl">
             <img
-              src="/vector.svg"
+              src="/Vector.svg"
               alt="logo"
             />
           </div>

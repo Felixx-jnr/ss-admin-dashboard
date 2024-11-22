@@ -5,13 +5,13 @@ import "tailwindcss/tailwind.css";
 
 Chart.register(ArcElement, Tooltip, Legend);
 
-const SmallDoughnut = () => {
+const SmallDoughNutTwo = () => {
   // Define data and gradient
   const data = {
     datasets: [
       {
-        data: [32, 68], // Adding a second value to show the empty space
-        backgroundColor: ["#996DEB", "#E2E6FF"],
+        data: [61, 39], // Adding a second value to show the empty space
+        backgroundColor: ["#B6DD80", "#9EC6001A"],
         borderWidth: 0,
         borderRadius: 13,
       },
@@ -44,7 +44,7 @@ const SmallDoughnut = () => {
       ctx.save();
       ctx.beginPath();
       ctx.arc(centerX, centerY, innerRadius, 0, Math.PI * 2);
-      ctx.fillStyle = "#E2E6FF"; // Set the desired background color
+      ctx.fillStyle = "#9EC6001A";
       ctx.fill();
       ctx.restore();
     },
@@ -60,7 +60,7 @@ const SmallDoughnut = () => {
       />
       <div className="absolute bg-white p-1 rounded-full flex flex-col items-center">
         <img
-          src="/Arrow.svg"
+          src="/Arrow-green.svg"
           alt=""
         />
       </div>
@@ -68,4 +68,4 @@ const SmallDoughnut = () => {
   );
 };
 
-export default SmallDoughnut;
+export default SmallDoughNutTwo;

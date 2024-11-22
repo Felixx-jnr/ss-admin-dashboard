@@ -2,7 +2,7 @@ import React from "react";
 
 const cardDets = [
   {
-    icon: "/paper.svg",
+    icon: "/Paper.svg",
     title: "Total Menu",
     amount: "$345",
   },

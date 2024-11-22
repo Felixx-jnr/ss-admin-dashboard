@@ -188,6 +188,7 @@ const BarChart = () => {
           plugins={[customCirclesPlugin]}
         />
       </div>
+
       <div className="md:mx-6 mx-2 flex gap-2 md:gap-4 my-6 max-xs:flex-wrap ">
         <div className="flex items-center gap-[7px] ">
           <div className="w-3 h-3 bg-[linear-gradient(283.95deg,_#0049C6_-12.57%,_#CDF4FF_126.88%)] rounded-[4px] "></div>
