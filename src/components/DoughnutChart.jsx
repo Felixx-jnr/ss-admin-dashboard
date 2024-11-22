@@ -31,7 +31,7 @@ const DoughnutChart = () => {
     datasets: [
       {
         data: [4, 5, 6], // Data values for each slice
-        backgroundColor: ["#", "pink", "blue"], // Slice colors
+        backgroundColor: ["#ddd", "pink", "blue"], // Slice colors
         borderWidth: 0, // No border between slices
       },
     ],

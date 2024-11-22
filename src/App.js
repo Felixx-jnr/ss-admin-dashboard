@@ -10,7 +10,7 @@ import CustomerMap from "./components/CustomerMap";
 
 function App() {
   return (
-    <main className="flex bg-[#F8F9FF] pb-[61px]">
+    <main className="flex justify-center bg-[#F8F9FF] pb-[61px]">
       <div>
         <SideBar />
       </div>

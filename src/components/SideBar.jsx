@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import SubscriptionChart from "./SubscriptionChart";
 
 const Sidebar = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isSubOpen, setIsSubOpen] = useState(true);
 
   const links = [
     {
@@ -44,9 +46,9 @@ const Sidebar = () => {
 
       {/* Sidebar */}
       <div
-        className={` bg-white flex flex-col pb-[41px] fixed top-0 left-0 h-full w-56 z-40 transition-transform transform 
+        className={` bg-white flex flex-col pb-[41px] fixed top-0 left-0 h-full w-56 z-40 transition-transform transform xl:w-[271px] 
           ${isSidebarOpen ? "translate-x-0" : "-translate-x-full"} 
-          lg:translate-x-0 lg:relative lg:w-[271px]`}
+          lg:translate-x-0 lg:relative`}
       >
         {/* Logo */}
         <div
@@ -67,7 +69,7 @@ const Sidebar = () => {
         </div>
 
         {/* Links */}
-        <ul className="px-6">
+        <ul className="px-6  mb-[377px]">
           {links.map((link, index) => (
             <li
               key={index}
@@ -92,18 +94,37 @@ const Sidebar = () => {
         </ul>
 
         {/* Subscription Card */}
-        <div className="bg-[#F8F9FB] rounded-[10px] p-4 mx-[21px] mt-[311px]">
-          <div>chart</div>
-          <div>
-            <h3 className="font-inter font-semibold text-base text-[#272d37]">
-              Subscription Plan
-            </h3>
-            <p className="font-inter font-normal text-[#5F6D7E] text-sm">
-              Your Subscription plan will expire soon, please upgrade!
-            </p>
-            <h3 className="mt-4 text-purple text-sm font-semibold">Upgrade</h3>
+        {isSubOpen && (
+          <div className="bg-[#F8F9FB] rounded-[10px] p-1 xl:p-4 mx-[21px] ">
+            <div className="flex justify-between">
+              <div className="h-[58px] w-[58px] mb-2">
+                <SubscriptionChart />
+              </div>
+              <div
+                onClick={() => setIsSubOpen(false)}
+                className=" cursor-pointer "
+              >
+                <img
+                  src="/close cross.svg"
+                  alt="close"
+                  className=" hover:rotate-180 transition duration-300"
+                />
+              </div>
+            </div>
+
+            <div>
+              <h3 className="font-inter font-semibold text-base text-[#272d37]">
+                Subscription Plan
+              </h3>
+              <p className="font-inter font-normal text-[#5F6D7E] text-sm">
+                Your Subscription plan will expire soon, please upgrade!
+              </p>
+              <h3 className="mt-4 text-purple text-sm font-semibold">
+                Upgrade
+              </h3>
+            </div>
           </div>
-        </div>
+        )}
       </div>
 
       {/* Backdrop for Mobile */}

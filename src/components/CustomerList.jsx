@@ -40,14 +40,14 @@ const customerList = [
 
 const CustomerList = () => {
   return (
-    <div className=" ml-6 mid:w-72 w-full  bg-white shadow-[0px_8px_16px_0px_rgba(143,149,178,.14)] rounded-[6px] px-[23px] h-[445px]">
+    <div className=" mid:ml-6  mid:w-72 w-full  bg-white shadow-[0px_8px_16px_0px_rgba(143,149,178,.14)] rounded-[6px] px-[23px] xs:h-[445px]">
       <h3 className=" font-inter font-bold text-lg text-[#081735] mb-[21px] mt-[19px]">
         Customers List
       </h3>
 
       {customerList.map((customer) => (
-        <div className=" flex items-center gap-4 mb-[13px] ">
-          <div className="w-10 h-10 rounded-[50%]">
+        <div className=" flex items-center gap-2 xs:gap-4 mb-[13px] ">
+          <div className=" w-8 h-8 xs:w-10 xs:h-10 rounded-[50%]">
             <img
               src={customer.src}
               alt=""
@@ -55,10 +55,10 @@ const CustomerList = () => {
             />
           </div>
           <div>
-            <h4 className=" font-inter font-bold text-sm text-[#1E293B]">
+            <h4 className=" font-inter font-bold text-xs xs:text-sm text-[#1E293B]">
               {customer.name}
             </h4>
-            <p className=" font-inter font-normal text-sm text-[#64748b]">
+            <p className=" font-inter font-normal text-[10px] xs:text-sm text-[#64748b]">
               {customer.mail}
             </p>
           </div>

@@ -1,8 +1,9 @@
 import React from "react";
 import CircularProgressChart from "./DoughnutChart";
 import DoughnutChart from "./DoughnutChart";
-import PieChart from "./DoughnutChart";
+
 import SmallDoughnutChart from "./SmallDoughNut";
+import PieChart from "./PieChart";
 
 const Customer = () => {
   const labels = ["Unsatisfied", "Very Unsatisfied", "Very Satisfied"];
@@ -21,13 +22,15 @@ const Customer = () => {
         />
       </div>
 
+      <PieChart />
+      {/* 
       <DoughnutChart
         labels={labels}
         data={data}
         colors={colors}
-      />
+      /> */}
 
-      <SmallDoughnutChart />
+      {/* <SmallDoughnutChart /> */}
     </div>
   );
 };
