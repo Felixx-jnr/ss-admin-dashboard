@@ -1,69 +1,54 @@
 import React from "react";
+import { Chart, ArcElement, Tooltip, Legend } from "chart.js";
 import { Doughnut } from "react-chartjs-2";
-import { Chart as ChartJS, ArcElement, Tooltip, Legend } from "chart.js";
+import "tailwindcss/tailwind.css";
+import SubscriptionChart from "./SubscriptionChart";
+import CenterCirle from "./CenterCirle";
 
-// Register Chart.js components
-ChartJS.register(ArcElement, Tooltip, Legend);
+Chart.register(ArcElement, Tooltip, Legend);
 
 const PieChart = () => {
-  // Data for the doughnut chart
+  // Define data and gradient
   const data = {
-    labels: ["Unsatisfied", "Very Unsatisfied", "Very Satisfied"],
     datasets: [
       {
-        data: [4, 7, 8], // Values for each slice
-        backgroundColor: ["#FFB7F5", "#FF4500", "#00BFFF"], // Slice colors
-        borderWidth: 0, // No border between slices
+        data: [73.29, 124.68, 124.68],
+        backgroundColor: ["#996DEB", "#A8DA80", "#6C5DD31A"],
+        borderWidth: 0,
       },
     ],
   };
 
-  // Chart options with plugin to draw circle and text in the center
   const options = {
-    responsive: true,
+    cutout: "70%",
     plugins: {
+      tooltip: {
+        enabled: false, // Disable tooltips
+      },
       legend: {
-        display: false, // Disable the legend
+        display: false, // Disable legend
       },
     },
-    // Custom plugin to render a circle and text in the center of the doughnut
-    plugins: [
-      {
-        id: "centerCircleText",
-        beforeDraw: (chart) => {
-          const ctx = chart.ctx;
-          const { width, height } = chart.chartArea;
-          const centerX = width / 2;
-          const centerY = height / 2;
-          const radius = Math.min(width, height) / 2 - 20; // Slightly smaller radius than the doughnut's radius
-
-          // Draw circle in the center
-          ctx.save();
-          ctx.beginPath();
-          ctx.arc(centerX, centerY, radius, 0, 2 * Math.PI);
-          ctx.fillStyle = "#ffffff"; // Circle color
-          ctx.fill();
-          ctx.restore();
-
-          // Draw text in the center of the circle
-          const fontSize = 20;
-          ctx.save();
-          ctx.font = `${fontSize}px Arial`;
-          ctx.fillStyle = "#000"; // Text color
-          ctx.textAlign = "center";
-          ctx.textBaseline = "middle";
-          ctx.fillText("Center Text", centerX, centerY);
-          ctx.restore();
-        },
-      },
-    ],
+    responsive: true,
+    maintainAspectRatio: true,
   };
 
   return (
-    <Doughnut
-      data={data}
-      options={options}
-    />
+    <div
+      style={{ boxShadow: "0px 8.54px 22.78px 0px rgba(108, 93, 211, 0.1)" }}
+      className=" pl-[27.66px] pr-[30.76px] pt-[30.48px] pb-[29.35px] rounded-full relative flex items-center justify-center h-full w-full bg-[#FAFBFF]  "
+    >
+      {/* Doughnut Chart */}
+      <Doughnut
+        data={data}
+        options={options}
+      />
+
+      {/* Center Component */}
+      <div className="absolute flex flex-col items-center">
+        <CenterCirle />
+      </div>
+    </div>
   );
 };
 

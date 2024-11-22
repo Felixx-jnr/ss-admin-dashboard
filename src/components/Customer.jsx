@@ -22,15 +22,12 @@ const Customer = () => {
         />
       </div>
 
-      <PieChart />
-      {/* 
-      <DoughnutChart
-        labels={labels}
-        data={data}
-        colors={colors}
-      /> */}
-
-      {/* <SmallDoughnutChart /> */}
+      <div
+        style={{ boxShadow: "0px 8.54px 22.78px 0px rgba(108, 93, 211, 0.1)" }}
+        className="w-[205px] h-[210px] ml-6 mt-5 rounded-full"
+      >
+        <PieChart />
+      </div>
     </div>
   );
 };
